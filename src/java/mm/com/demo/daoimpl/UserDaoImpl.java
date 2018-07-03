@@ -36,6 +36,7 @@ public class UserDaoImpl implements UserDao {
 
 	public String insert(User user) {
 		user.setId(getMaxId()+1);
+		user.setUid(getMaxId()+1001);
 		userList.add(user);
 		return "Saved successfully";
 	}

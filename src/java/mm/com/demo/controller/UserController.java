@@ -78,7 +78,7 @@ public class UserController {
 		return "redirect:user.html";
 	}
 	
-	@RequestMapping(value = "/edituserInfo", method = RequestMethod.POST)
+	@RequestMapping(value = "/editUserInfo", method = RequestMethod.POST)
 	public String getInfoById(@ModelAttribute("id") int id, Locale locale, Model model) {
 		model.addAttribute("userObj", userService.getUserById(id));
 		return "register";
@@ -117,7 +117,7 @@ public class UserController {
 	public void printReportExcel(HttpServletResponse response) {
 		List<User> userList = userService.getAllUserList();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("printBy", "San Win Thet Aung");
+		params.put("printBy", "Admin");
 		String fileName = servletContext.getRealPath("/reports")+"/userList.jrxml";
 		JRBeanCollectionDataSource l_dataSource = new JRBeanCollectionDataSource(userList);
 		try {
