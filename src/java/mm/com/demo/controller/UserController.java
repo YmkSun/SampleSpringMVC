@@ -89,7 +89,7 @@ public class UserController {
 	public void printReportPdf(HttpServletResponse response) {
 		List<User> userList = userService.getAllUserList();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("printBy", "San Win Thet Aung");
+		params.put("printBy", "Admin");
 		String fileName = servletContext.getRealPath("/reports")+"/userList.jrxml";
 		JRBeanCollectionDataSource l_dataSource = new JRBeanCollectionDataSource(userList);
 		try {
